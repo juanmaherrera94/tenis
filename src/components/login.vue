@@ -62,7 +62,8 @@ const rol = ref("jugador"); // Fijo para registro
 
 const login = async () => {
   try {
-    const response = await axios.post("https://gestiontenis.up.railway.app/usuarios/login", {
+    const response = await axios.post("https://gestiontenis.up.railway.app/api/usuarios/login"
+, {
       usuario: username.value,
       password: password.value,
     });
