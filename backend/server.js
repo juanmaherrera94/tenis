@@ -10,11 +10,14 @@ const port = process.env.PORT || 4000;
 // CORS para desarrollo (en producción ya no necesitas esto si todo se sirve desde el mismo dominio)
 const corsOptions = {
   origin: "https://tenis-production.up.railway.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type"]
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(express.json());
 
 // Rutas backend

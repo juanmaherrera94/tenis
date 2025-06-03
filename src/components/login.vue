@@ -62,7 +62,7 @@ const rol = ref("jugador"); // Fijo para registro
 
 const login = async () => {
   try {
-    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/usuarios/login`, {
+    const response = await axios.post(`https://tenis-production.up.railway.app/api/usuarios/login`, {
   usuario: username.value,
   password: password.value,
 });
